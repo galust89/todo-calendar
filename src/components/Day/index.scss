@@ -1,0 +1,28 @@
+.day {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ccc;
+  border-left-width: 0;
+  border-top-width: 0;
+  padding: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  .number {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  .todoesContainer {
+    display: flex;
+    color: white;
+    font-size: 1.5rem;
+    align-items: center;
+    text-align: center;
+    height: 90%;
+    width: 75%;
+    padding: 3px;
+    background: cornflowerblue;
+  }
+}
+.lightskyblue {
+  background-color: lightskyblue;
+}

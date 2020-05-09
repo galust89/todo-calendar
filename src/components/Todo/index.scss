@@ -1,0 +1,14 @@
+@import "../../css/variables";
+
+.item {
+    @extend .border;
+    border: 1px solid black;
+}
+.remove {
+    display: block;
+    background-color: crimson;
+    margin-bottom: 5px;
+}
+.done {
+    background-color: lightgreen;
+}

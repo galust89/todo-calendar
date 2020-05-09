@@ -1,0 +1,30 @@
+.calendar {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+  background-color: aliceblue;
+  .searchBar {
+    padding: 5px;
+    height: 6rem;
+    background-color: cornflowerblue;
+    .searchInput {
+      height: 100%;
+      width: 80%;
+      padding: 1rem;
+    }
+  }
+  .title {
+    height: 6rem;
+    text-align: center;
+    font-size: 3rem;
+    padding: 1rem;
+    background-color: cornflowerblue;
+  }
+  .days {
+    display: grid;
+    grid-template-rows: 10rem;
+    grid-auto-rows: 10rem;
+    grid-template-columns:repeat(auto-fit, minmax(20rem, 1fr)) ;
+  }
+}
