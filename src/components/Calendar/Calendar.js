@@ -15,12 +15,13 @@ const Calendar = () => {
         if(e.target.value){
             const filteredDays = [];
             for(let key in state.allTodoes){
-                state.allTodoes[key].todoes.forEach(el => {
-                    if(el.title.includes(e.target.value)){
+                for(let item of state.allTodoes[key].todoes) {
+                    if (item.title.includes(e.target.value)) {
                         const splitedKey = key.split('-')
-                        filteredDays.push({day: splitedKey[0], month: splitedKey[1], year:splitedKey[2] });
+                        filteredDays.push({day: splitedKey[0], month: splitedKey[1], year: splitedKey[2]});
+                        break;
                     }
-                })
+                }
             }
             setDaysArray(filteredDays);
         }
@@ -30,6 +31,7 @@ const Calendar = () => {
         setFilterValue(e.target.value);
 
     }
+
     return (
         <div className="calendar">
             <div className="searchBar">

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useMemo, useState} from 'react';
 import {useLocation} from 'react-router-dom'
 
 import "./index.scss"
@@ -10,22 +10,20 @@ import {months} from "../../constants";
 
 const Todoes = () => {
     const location = useLocation();
-    const state = useTodoStateContext();
+    const {allTodoes} = useTodoStateContext();
     const [showAddNewTodoModal, setShowAddNewTodoModal] = useState(false);
 
-    if(!location.state){
-        return<div>Empty</div>
-    }
+    const {number, month, year, dayString } = useMemo(() => location.state, [location.state]) ;
+    const todoes = useMemo(() => allTodoes[dayString] ? allTodoes[dayString].todoes : [], [allTodoes, dayString])
 
-    const {number, month, year, dayString } = location.state;
-    const todoes = state.allTodoes[dayString] ? state.allTodoes[dayString].todoes : [];
 
-    const openModal = () => {
+    const openModal = useCallback(() => {
         setShowAddNewTodoModal(true)
-    }
-    const hideModal = () => {
+    },[])
+
+    const hideModal = useCallback(() => {
         setShowAddNewTodoModal(false)
-    }
+    },[])
 
     return (
         <div className='todoes'>

@@ -1,8 +1,10 @@
 import React from 'react';
 import { Route, BrowserRouter, Switch } from "react-router-dom";
+
 import Calendar from "./components/Calendar/Calendar";
 import Todoes from "./components/Todoes/Todoes";
 import Header from "./components/Header/Header";
+import PageNotFound from "./components/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -14,6 +16,9 @@ function App() {
            </Route>
            <Route path="/day" >
                <Todoes/>
+           </Route>
+           <Route path= "**">
+               <PageNotFound/>
            </Route>
        </Switch>
    </BrowserRouter>

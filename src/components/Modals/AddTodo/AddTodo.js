@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './index.scss'
 import Button from "../../Button/Button";
 import {useTodoDispatchContext} from "../../../state/TodoProvider";
@@ -15,6 +16,7 @@ const AddTodo = ({hideModal, dayString, number, month, year}) => {
         dispatch(addTodo(dayString, title, description ));
         hideModal();
     }
+
     return (
         <div className="modal">
             <div className="content">

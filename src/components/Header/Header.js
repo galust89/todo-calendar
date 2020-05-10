@@ -7,7 +7,7 @@ const Header = () => {
     return (
         <div className="main-header">
             <h3>Header</h3>
-            <div className="count-info">{count} To do items {count - completed} of which is incomplete</div>
+            <div className="count-info">{count} To do items  {count ? `${(count - completed)} of which is incomplete` : ""}</div>
         </div>
     );
 };
