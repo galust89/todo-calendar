@@ -5,6 +5,7 @@ import Calendar from "./components/Calendar/Calendar";
 import Todoes from "./components/Todoes/Todoes";
 import Header from "./components/Header/Header";
 import PageNotFound from "./components/PageNotFound/PageNotFound";
+import WrappedPage from "./components/WrappedPage";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
                <Calendar/>
            </Route>
            <Route path="/day" >
-               <Todoes/>
+               <WrappedPage/>
            </Route>
            <Route path= "**">
                <PageNotFound/>
